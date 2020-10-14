@@ -26,6 +26,20 @@ int main(){
     c_05.setMemoriaRam(4);
     c_05.setTarjetaGrafica(2);
 
+    //Metodo de Sobrecarga
+    //Ejemplo 6
+    Computadora c_06;
+    cin >> c_06;
+    cout << c_06;
+    cin.get();
+    Computadora c_07;
+    cin >> c_07;
+    cin.get();
+    Computadora c_08;
+    cin >> c_08;
+    cin.get();
+
+
     //Agregar y mostrar
     Laboratorio lb;
     lb.agregarComputadora(c_01);
@@ -33,6 +47,9 @@ int main(){
     lb.agregarComputadora(c_03);
     lb.agregarComputadora(c_04);
     lb.agregarComputadora(c_05);
+    lb.agregarComputadora(c_06);
+    lb << c_07 << c_08;
+
     lb.mostrar();
 
     return 0;

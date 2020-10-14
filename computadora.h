@@ -2,6 +2,7 @@
 #define COMPUTADORA_H_INCLUDED
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 class Computadora
@@ -26,7 +27,32 @@ class Computadora
     int getMemoriaRam();
     int getTarjetaGrafica();
 
+    friend ostream& operator<<(ostream &out, const Computadora &c){
+        out << left ; 
+        out << setw(20) << c.sistemaOperativo;
+        out << setw(21) << c.nombreEquipo;
+        out << setw(15) << c.memoriaRam;
+        out << setw(16) << c.tarjetaGrafica;
+        out << endl;
+        return out;
+    }
 
+    friend istream& operator>>(istream &in, Computadora &c){
+        
+        cout << "Sistema Operativo: ";
+        getline(cin, c.sistemaOperativo);
+        
+        cout << "Nombre Equipo: ";
+        getline(cin, c.nombreEquipo);
+
+        cout << "Memoria Ram: ";
+        cin >> c.memoriaRam;
+
+        cout << "Tarjeta Grafica: ";
+        cin >> c.tarjetaGrafica;
+
+        return in;
+    }
 };
 
 #endif //COMPUTADORA_H_INCLUDED

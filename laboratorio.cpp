@@ -5,10 +5,10 @@ Laboratorio::Laboratorio()
     cont = 0;
 }
 
-void Laboratorio::agregarComputadora(const Computadora &a)
+void Laboratorio::agregarComputadora(const Computadora &c)
 {
-    if(cont < 5){
-        array[cont] = a;
+    if(cont < LIMIT_ARRAY){
+        array[cont] = c;
         cont++;
     }
     else{
@@ -18,11 +18,19 @@ void Laboratorio::agregarComputadora(const Computadora &a)
 
 void Laboratorio::mostrar()
 {
+    cout << left;
+    cout << setw(20) << "Sistema Operativo";
+    cout << setw(16) << "Nombre Equipo";
+    cout << setw(14) << "Memoria Ram";
+    cout << setw(16) << "Tarjeta Grafica";
+    cout << endl;
+
     for(size_t i = 0; i < cont; i++){
-        Computadora &a = array[i];
-        cout << "Sistema operativo: " << a.getSistemaOperativo() << endl;
-        cout << "Nombre del equipo: " << a.getNombreEquipo() << endl;
-        cout << "Memoria RAM:       " << a.getMemoriaRam() << endl;
-        cout << "Tarjeta grafica:   " << a.getTarjetaGrafica() << endl;
+        Computadora &c = array[i];
+        cout << c;
+        //cout << "Sistema operativo: " << a.getSistemaOperativo() << endl;
+        //cout << "Nombre del equipo: " << a.getNombreEquipo() << endl;
+        //cout << "Memoria RAM:       " << a.getMemoriaRam() << endl;
+        //cout << "Tarjeta grafica:   " << a.getTarjetaGrafica() << endl;
     }
 }
