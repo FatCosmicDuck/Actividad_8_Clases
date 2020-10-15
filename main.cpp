@@ -4,6 +4,14 @@
 using namespace std;
 
 int main(){
+    //EL SEGUNDO PASO ES RECUPERAR DE LOS ARCHIVOS DE RESPALDO
+    /*
+    Laboratorio l;
+    l.recuperar();
+    l.mostrar();
+    */
+    
+    //PRIMERO SE TIENEN QUE GENERAR LOS ARCHIVOS DE RESPALDO
     //Metodo parametrizado
     //Ejemplo 1
     Computadora c_01 = Computadora("Windows", "CarlosXD", 4, 1);
@@ -40,7 +48,7 @@ int main(){
     cin.get();
 
 
-    //Agregar y mostrar
+    //Agregar computadoras
     Laboratorio lb;
     lb.agregarComputadora(c_01);
     lb.agregarComputadora(c_02);
@@ -50,7 +58,15 @@ int main(){
     lb.agregarComputadora(c_06);
     lb << c_07 << c_08;
 
+    //Mostrar tabla
     lb.mostrar();
+    
+    //Crear respaldo de tabla
+    lb.respaldarTabla();
+
+    //Crear respaldo de linea por linea
+    lb.respaldar();
+    
 
     return 0;
 }
